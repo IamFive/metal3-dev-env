@@ -2,7 +2,7 @@
 {% set netmask_v4 = item.netmask_v4|default("") %}
 {% set prefix_v6 = item.prefix_v6|default("") %}
 
-{% if item.dns.options is defined %}
+{% if item.dns is defined and item.dns.options is defined %}
 <network xmlns:dnsmasq='http://libvirt.org/schemas/network/dnsmasq/1.0'>
   <dnsmasq:options>
     <dnsmasq:option value='{{ item.dns.options }}'/>
